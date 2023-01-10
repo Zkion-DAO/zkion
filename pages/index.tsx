@@ -1,13 +1,11 @@
-import { Inter } from '@next/font/google';
 import { Flex } from '@chakra-ui/react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
-import HeroImage from '../assets/hero.jpg';
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Flex direction="column" align="center" maxW={{ xl: '1200px' }} m="0 auto">
         <Header />
         <Hero
@@ -19,6 +17,6 @@ export default function Home() {
         />
         <Footer />
       </Flex>
-    </>
+    </div>
   );
 }

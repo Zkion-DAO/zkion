@@ -4,18 +4,20 @@ import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      w="100%"
-      mb={0}
-      p={0}
-      bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
-    >
-      <Logo />
-      <Text>© 2023 Zkion. All Rights Reserved.</Text>
-    </Flex>
+    <div>
+      <Flex
+        as="nav"
+        align="center"
+        justify="space-between"
+        wrap="wrap"
+        w="100%"
+        mb={0}
+        p={0}
+        bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
+      >
+        <Logo />
+        <Text>© 2023 Zkion. All Rights Reserved.</Text>
+      </Flex>
+    </div>
   );
 }
