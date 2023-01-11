@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import logo from '../assets/logo.png';
+import styles from '../../styles/Home.module.css';
+import logo from '../../public/logo.png';
 
 export default function Logo() {
   return (

@@ -1,6 +1,7 @@
 'use client';
 import { Flex, Text } from '@chakra-ui/react';
-import Logo from './Logo';
+import Logo from '../common/Logo';
+import { appName } from '../../utils/constants';
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
         bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
       >
         <Logo />
-        <Text>© 2023 Zkion. All Rights Reserved.</Text>
+        <Text>© 2023 {appName}. All Rights Reserved.</Text>
       </Flex>
     </div>
   );

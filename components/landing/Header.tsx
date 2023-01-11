@@ -1,24 +1,26 @@
 'use client';
 import Link from 'next/link';
 import { Box, Flex, Text, Button, FlexProps, OmitCommonProps } from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../utils/ColorModeSwitcher';
-import Logo from './Logo';
+import { ColorModeSwitcher } from '../../utils/ColorModeSwitcher';
+import Logo from '../common/Logo';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 const MenuItem = (props: { [x: string]: any; children: any; isLast: any; to?: '/' | undefined }) => {
   const { children, isLast, to = '/', ...rest } = props;
   return (
-    <Text mb={{ base: isLast ? 0 : 8, sm: 0 }} mr={{ base: 0, sm: isLast ? 0 : 8 }} display="block" {...rest}>
-      <Link href={to}>{children}</Link>
-    </Text>
+    <div>
+      <Text mb={{ base: isLast ? 0 : 8, sm: 0 }} mr={{ base: 0, sm: isLast ? 0 : 8 }} display="block" {...rest}>
+        <Link href={to}>{children}</Link>
+      </Text>
+    </div>
   );
 };
 
-const Header = (
+export default function Header(
   props: JSX.IntrinsicAttributes &
     OmitCommonProps<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof FlexProps> &
     FlexProps & { as?: 'div' | undefined },
-) => {
+) {
   return (
     <div>
       <Flex
@@ -32,10 +34,6 @@ const Header = (
         bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
         {...props}
       >
-        <Flex align="center">
-          <Logo />
-        </Flex>
-
         <Box flexBasis={{ base: '100%', md: 'auto' }}>
           <Flex
             align={['center', 'center', 'center', 'center']}
@@ -43,6 +41,7 @@ const Header = (
             direction={['column', 'row', 'row', 'row']}
             pt={[4, 4, 0, 0]}
           >
+            <Logo />
             <MenuItem href="/" isLast={false}>
               Home
             </MenuItem>
@@ -74,6 +73,4 @@ const Header = (
       </Flex>
     </div>
   );
-};
-
-export default Header;
+}
