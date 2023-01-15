@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "app.zkion.com"
+        }
+      ],
+      "destination": "/app/:path*"
+    }
+  ]
+}
